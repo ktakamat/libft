@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 20:50:23 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/24 18:57:09 by machi            ###   ########.fr       */
+/*   Updated: 2023/05/24 21:47:44 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
 	len = 0;
-	a = 0;
-    i = 0;
+	i = 0;
 	if (size > len_dst)
 		len = len_dst + len_src;
 	else

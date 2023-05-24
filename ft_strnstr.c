@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 19:08:32 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/21 20:49:26 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:34:56 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 
-	if (*(needle) != '\0')
+	if (*(needle) == '\0')
 	{
 		return ((char *)haystack);
 	}
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			if (needle[i + 1] == '\0')
 				return ((char *)haystack);
-			if (i > len)
+			if (i >= len)
 				return (NULL);
 			i++;
 		}
