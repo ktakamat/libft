@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 20:14:14 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/21 20:25:15 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:40:04 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (*str != '\0')
 		{
-			return (0);
+			return (NULL);
 		}
 		str++;
 	}

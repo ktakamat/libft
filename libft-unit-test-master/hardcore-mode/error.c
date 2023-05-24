@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: inyancat <inyancat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 19:13:51 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/24 19:01:54 by machi            ###   ########.fr       */
+/*   Created  2016/11/11 16:47:32 by inyancat          #+#    #+#             */
+/*   Updated  2016/11/12 20:21:42 by inyancat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
+#include <stdarg.h>
+extern int g_log_fd;
 
-void	*ft_memset(void *s, int c, size_t n)
+void error(int code, int a, const char *pattern, ...)
 {
-	size_t	i;
+	va_list	va;
 
-	if (s == '\0')
-	{
-		return (0);
-	}
-	i = 0;
-	while (i < n)
-	{
-		*(unsigned char *)(s + i) = (unsigned char)c;
-		i++;
-	}
-	return (s);
+	va_start(va, pattern);
+	(void)a;
+	vdprintf(g_log_fd, pattern, va);
+	dprintf(g_log_fd, "\n");
+	va_end(va);
+	exit(code);
 }

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   tester.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: susami <susami@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 19:13:51 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/24 19:01:54 by machi            ###   ########.fr       */
+/*   Created: 2022/05/02 09:47:36 by susami            #+#    #+#             */
+/*   Updated: 2022/05/30 12:25:38 by susami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef TESTER_H
+# define TESTER_H
 
-void	*ft_memset(void *s, int c, size_t n)
-{
-	size_t	i;
+# include <limits.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <ctype.h>
+# include <fcntl.h>
+# include "libft.h"
+# include "libassert.h"
 
-	if (s == '\0')
-	{
-		return (0);
-	}
-	i = 0;
-	while (i < n)
-	{
-		*(unsigned char *)(s + i) = (unsigned char)c;
-		i++;
-	}
-	return (s);
-}
+#endif

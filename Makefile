@@ -43,7 +43,6 @@ all: $(TARGET)
 
 $(TARGET) : $(OBJS)
 	ar rcs $(TARGET) $(OBJS)
-
 clean:
 	-rm -f $(OBJS)
 fclean: clean

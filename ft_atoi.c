@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:03:09 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/21 14:50:49 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:36:11 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_isspace(const char c)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	is_negative;
-	int	num;
+	int				i;
+	int				is_negative;
+	long			num;
 
 	num = 0;
 	is_negative = 1;
@@ -46,6 +46,10 @@ int	ft_atoi(const char *str)
 	{
 		num = 10 * num + (str[i] - '0');
 		i++;
+		if (num * is_negative > 2147483647)
+			return (-1);
+		if (num * is_negative < -2147483648)
+			return (0);
 	}
 	return (num * is_negative);
 }
