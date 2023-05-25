@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 19:46:04 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/24 20:13:46 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/25 20:46:40 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,6 @@ int		ft_toupper(int c);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strdup(char *src);
+
 #endif
