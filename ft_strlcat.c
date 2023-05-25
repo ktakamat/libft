@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 20:50:23 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/24 21:47:44 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:59:45 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*a;
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	len;
 	size_t	i;
+	size_t	j;
 
-	a = (char *)src;
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	len = 0;
 	i = 0;
-	if (size > len_dst)
-		len = len_dst + len_src;
-	else
-		len = len_src + size;
-	while (a[i] != '\0' && (len_dst + 1) < size)
+	j = 0;
+	while (dst[i] && i < size)
 	{
-		dst[len_dst] = a[i];
-		len_dst++;
 		i++;
 	}
-	dst[len_dst] = '\0';
-	return (len);
+	while (src[j] && (i + j + 1) < size)
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	if (i < size)
+	{
+		dst[i + j] = '\0';
+	}
+	return (i + ft_strlen(src));
 }

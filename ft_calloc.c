@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:43:02 by machi             #+#    #+#             */
-/*   Updated: 2023/05/24 21:24:30 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/25 00:37:18 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 		return (0);
 	}
 	a = malloc(size * count);
-	if (a == '\0')
+	if (a == NULL)
 	{
 		return (NULL);
 	}

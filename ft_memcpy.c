@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 19:09:24 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/24 00:58:21 by machi            ###   ########.fr       */
+/*   Updated: 2023/05/25 00:15:15 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (dst == '\0' && src == '\0')
+	if (dst == NULL && src == NULL)
 	{
 		return (0);
 	}

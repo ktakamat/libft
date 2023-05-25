@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 10:58:49 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/21 20:21:03 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/25 00:15:36 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(const void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
-	if (dst == '\0' && src == '\0')
+	if (dst == NULL && src == NULL)
 	{
 		return (0);
 	}
