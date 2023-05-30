@@ -3,13 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 21:19:27 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/25 21:22:26 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:18:37 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (s == NULL)
+	{
+		return ;
+	}
+	while (*s != '\0')
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+	ft_putchar_fd('\n', fd);
+}
