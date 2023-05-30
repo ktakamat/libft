@@ -3,10 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 21:13:31 by machi             #+#    #+#             */
-/*   Updated: 2023/05/28 21:13:32 by machi            ###   ########.fr       */
+/*   Updated: 2023/05/30 19:03:36 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	
+}
