@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 21:45:51 by machi             #+#    #+#             */
-/*   Updated: 2023/06/02 21:19:31 by machi            ###   ########.fr       */
+/*   Updated: 2023/06/14 18:45:12 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last;
+	t_list	*last;
 
 	if (*lst == NULL)
 	{
-		*lst =new;
+		*lst = new;
 	}
 	else
 	{

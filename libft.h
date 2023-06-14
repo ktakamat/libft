@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 19:46:04 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/06/14 02:30:59 by machi            ###   ########.fr       */
+/*   Updated: 2023/06/14 19:06:44 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
@@ -58,7 +58,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strtrim(char const *s1, char const *set);
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 20:31:12 by machi             #+#    #+#             */
-/*   Updated: 2023/06/14 09:13:34 by machi            ###   ########.fr       */
+/*   Updated: 2023/06/14 18:45:35 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst != NULL)
 	{
 		new = ft_lstnew(f(lst->content));
-		if (new == NULL) 
+		if (new == NULL)
 		{
 			ft_lstclear(&head, del);
 			return (NULL);

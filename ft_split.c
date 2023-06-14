@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 18:38:04 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/06/06 13:50:00 by machi            ###   ########.fr       */
+/*   Updated: 2023/06/14 22:41:35 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int count_words(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -33,7 +33,7 @@ static int count_words(const char *str, char c)
 	return (i);
 }
 
-static char *word_dup(const char *str, int start, int finish)
+static char	*word_dup(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
@@ -48,15 +48,26 @@ static char *word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**checkfree(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
+}
+
+char	**ft_uwu(char **split, const char *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	int		index;
-	char	**split;
 
-	if (s == NULL || !(split = malloc((count_words(s, c) +1) * sizeof(char *))))
-		return (0);
 	i = 0;
 	j = 0;
 	index = -1;
@@ -66,11 +77,26 @@ char	**ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			split[j++] = word_dup(s, index, i);
-			index = -1; 
+			split[j] = word_dup(s, index, i);
+			if (split[j] == NULL)
+				return (checkfree(split));
+			index = -1;
+			j++;
 		}
 		i++;
 	}
 	split[j] = 0;
 	return (split);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split;
+
+	if (!s)
+		return (NULL);
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!split)
+		return (NULL);
+	return (ft_uwu(split, s, c));
 }

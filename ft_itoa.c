@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 18:38:30 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/06/06 13:45:13 by machi            ###   ########.fr       */
+/*   Updated: 2023/06/14 18:44:45 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ long int	ft_abs(long int nbr)
 int	ft_len(long int nbr)
 {
 	int	len;
-	
+
 	if (nbr <= 0)
 	{
 		len = 1;
