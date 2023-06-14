@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:03:09 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/05/24 15:36:11 by machi            ###   ########.fr       */
+/*   Updated: 2023/05/31 17:45:25 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,40 @@ int	ft_isspace(const char c)
 	}
 }
 
+long	ft_long(const char *str, int sign)
+{
+	long	num;
+	size_t	i;
+
+	num = 0;
+	i = 0;
+	while ('0' <= str[i] && str[i] <= '9' && str[i] != '\0')
+	{
+		if (sign == 1)
+		{
+			if ((num == LONG_MAX / 10 && str[i] > LONG_MAX % 10 + '0')
+				|| (num > LONG_MAX / 10))
+				return (LONG_MAX);
+		}
+		else
+		{
+			if ((-1 * num == LONG_MIN / 10 && -1
+					* (str[i] - '0') < (LONG_MIN % 10))
+				|| (-1 * num < LONG_MIN / 10))
+				return (LONG_MIN);
+		}
+		num *= 10;
+		num += str[i] - '0';
+		i++;
+	}
+	return (sign * num);
+}
+
 int	ft_atoi(const char *str)
 {
 	int				i;
 	int				is_negative;
-	long			num;
 
-	num = 0;
 	is_negative = 1;
 	i = 0;
 	while (str[i] != '\0' && ft_isspace(str[i]))
@@ -42,14 +69,5 @@ int	ft_atoi(const char *str)
 			is_negative *= -1;
 		i++;
 	}
-	while ('0' <= str[i] && str[i] <= '9')
-	{
-		num = 10 * num + (str[i] - '0');
-		i++;
-		if (num * is_negative > 2147483647)
-			return (-1);
-		if (num * is_negative < -2147483648)
-			return (0);
-	}
-	return (num * is_negative);
+	return (ft_long(&str[i], is_negative));
 }
