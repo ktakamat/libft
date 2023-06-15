@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:22:35 by machi             #+#    #+#             */
-/*   Updated: 2023/06/14 19:06:26 by ktakamat         ###   ########.fr       */
+/*   Updated: 2023/06/15 11:25:53 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*a;
-	size_t	i;
-	size_t	j;
+	unsigned int	i;
+	char			*new;
+	size_t			sum;
 
+	if (!s)
+		return (NULL);
+	sum = ft_strlen(s);
+	if (sum - start < len)
+		len = sum - start;
+	if (start >= sum || len == 0)
+		return (ft_strdup(""));
+	new = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
-	j = 0;
-	if (s == NULL)
+	if (new == NULL)
 		return (NULL);
-	a = (char *)malloc(sizeof(*s) * (len + 1));
-	if (a == NULL)
-		return (NULL);
-	while (s[i] != '\0')
+	while (i < len)
 	{
-		if (i >= start && j < len)
-		{
-			a[j] = s[i];
-			j++;
-		}
+		new[i] = s[start + i];
 		i++;
 	}
-	a[j] = '\0';
-	return (a);
+	new[i] = '\0';
+	return (new);
 }
